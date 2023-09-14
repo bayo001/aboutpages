@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.bio {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  flex-direction: column;
+}
+
+.photos {
+  min-height: 100vh;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.photos img {
+  width: 100%;
+}
+
+.photos img:nth-child(1) {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+iframe {
+  grid-column: 1 / span 4;
+  margin-bottom: 2em;
+}
+
+.photos img:nth-child(2),
+.photos img:nth-child(3),
+.photos img:nth-child(4),
+.photos img:nth-child(5) {
+  grid-row: span 1;
+  grid-column: span 1;
+}
+
+.card {
+  width: 30%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(179, 179, 179, 0.8);
+  transition: box-shadow 0.3s ease-in-out; 
+  padding: 1em;
+  margin-bottom: 2em;
+  border-radius: 10px;
+}
+
+.next-btn, .submitBtn, 
+.prev-btn {
+  padding: 1em;
+  border-radius: 10px;
+  font-weight: 700;
   color: white;
+  border: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.prev-btn, .next-btn {
+  text-decoration: none;
+  text-align: center;
+  width: 30%;
+}
+.submitBtn {
+  margin: 0 0 2em;
+  background-color: navy;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.next-btn {
+  background-color: black; 
+  margin-left: 1em;
+}
+
+.prev-btn {
+  background-color: grey;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.formOne input {
+  display: block;
+  margin-bottom: 1em;
+  width: 100%;
+  padding: 1em;
 }
